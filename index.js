@@ -241,8 +241,7 @@ var configFileExists = function () {
 
 display.header('Checking Project & Splash');
 
-atLeastOnePlatformFound()
-.then(validSplashExists)
+validSplashExists()
 .then(configFileExists)
 .then(getProjectName)
 .then(getPlatforms)
