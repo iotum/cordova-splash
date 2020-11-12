@@ -32,7 +32,7 @@ var getPlatforms = function (projectName) {
 
   platforms.push({
     name : 'android',
-    isAdded : fs.existsSync('platforms/android'),
+    isAdded : true,
     splashPath : 'res/screen/android',
     splash : [
       // Landscape
@@ -241,7 +241,8 @@ var configFileExists = function () {
 
 display.header('Checking Project & Splash');
 
-validSplashExists()
+atLeastOnePlatformFound()
+.then(validSplashExists)
 .then(configFileExists)
 .then(getProjectName)
 .then(getPlatforms)
